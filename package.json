@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-app-books",
+  "version": "1.0.0",
+  "description": "Application done with JS, Node, Express and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Javier Boscán",
+  "license": "ISC"
+}
