@@ -19,6 +19,13 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use(morgan('dev'));
+const multerStorage = multer.diskStorage({
+	destination: path.join(__dirname, 'public/img-uploads'),
+	filename: (req, file, cb) => {
+		cb(null, new Date().getTime() + path.extname(file.originalname));
+	},
+});
+app.use(multer({ multerStorage }).single('image'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -27,6 +34,7 @@ app.use(cors());
 app.use('/api/books', require('./rest_api/rest_api.js'));
 
 // Static files
+app.use(express.static(path.join(__dirname, 'public')))
 
 // Start the server
 app.listen(app.get('port'), () => {
