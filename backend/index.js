@@ -8,6 +8,7 @@ const cors = require('cors'),
     morgan = require('morgan'),
     multer = require('multer'),
     path = require('path');
+const { json } = require('express');
 
 // Initialization
 const app = express();
@@ -18,6 +19,11 @@ app.set('port', process.env.PORT || 3000)
 
 // Middlewares
 app.use(morgan('dev'))
+app.use(express.json())
+app.use(cors())
+
+// Rest API
+app.use('/api/books', require('./rest_api/rest_api.js'))
 
 // Static files
 

@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose')
 const BookSchema = new Schema({
     author: { type: String, required: true },
     created_at: { type: Date, default: Date.now() },
-    isbn: { type: true },
+    isbn: { type: String, required: true },
     image_path: { type: String },
     title: { type: String, required: true }
 })
