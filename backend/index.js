@@ -11,6 +11,7 @@ const cors = require('cors'),
 
 // Initialization
 const app = express();
+require('./connect_db')
 
 // Settings
 app.set('port', process.env.PORT || 3000)
