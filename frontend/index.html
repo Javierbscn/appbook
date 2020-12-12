@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de libros</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a href="/" class="navbar-brand">Inicio App</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <section class="col-md-4">
+                <div class="card mt-3">
+                    <div class="card-header text-center">
+                        <h1 class="h2">Ingresa un nuevo libro</h1>
+                    </div>
+                    <form id="book-form" class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" placeholder="Nombre del libro" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="author" class="form-control" placeholder="Nombre del autor">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="isbn" class="form-control" placeholder="Número isbn">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <label for="images" class="custom-file-label">Escoge una imagen</label>
+                                <input type="file" id="image" class="custom-file-input">
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-primary btn-block">Agregar</button>
+                    </form>
+                </div>
+            </section>
+            <section class="col-md-8" id="book-cards"></section>
+        </div>
+    </div>
+
+</body>
+</html>
