@@ -8,7 +8,6 @@ const cors = require('cors'),
 	morgan = require('morgan'),
 	multer = require('multer'),
 	path = require('path');
-const { json } = require('express');
 
 // Initialization
 const app = express();
