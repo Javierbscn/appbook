@@ -1,5 +1,6 @@
 const Book = require('../models/Book'),
 	{ Router } = require('express'),
+	{ unlink } = require('fs-extra'),
 	router = Router();
 
 router.get('/', async (req, res) => {
@@ -13,7 +14,14 @@ router.post('/', async (req, res) => {
 	const newBook = new Book({ title, author, isbn });
 	await newBook.save();
 
-	res.json({ message: 'Book added' });
+	res.json({ message: 'Libro añadido' });
 });
+
+router.delete('/:id', async (req, res) => {
+	// const bookDeleted = await Book.findByIdAndDelete(req.params.id)
+	// unlink(path.resolve('./backend/public/img-uploads' ))
+	// console.log(bookDeleted);
+	// res.json({message: 'Libro eliminado correctamente'})
+})
 
 module.exports = router;
