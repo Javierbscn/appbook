@@ -24,9 +24,10 @@ document.addEventListener('submit', async (e) => {
 	}
 });
 
-document.addEventListener('click', (e) => {
+document.addEventListener('click', async (e) => {
 	if(e.target.matches('.delete')) {
 		e.preventDefault()
-		ui.deleteBook(e.target.getAttribute('_id'))
+		const message = await ui.deleteBook(e.target.getAttribute('_id'))
+		console.log(message);
 	}
 });

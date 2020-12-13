@@ -19,7 +19,7 @@ app.set('port', process.env.PORT || 3000);
 // Middlewares
 app.use(morgan('dev'));
 const storage = multer.diskStorage({
-	destination: path.join(__dirname, 'public/uploads'),
+	destination: path.join(__dirname, 'public/img-uploads'),
 	filename(req, file, cb) {
 		cb(null, new Date().getTime() + path.extname(file.originalname));
 	},
