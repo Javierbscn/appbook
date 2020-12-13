@@ -1,7 +1,7 @@
 import UI from './UI';
+const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', () => {
-	const ui = new UI();
 	ui.renderBooks();
 });
 
@@ -19,10 +19,14 @@ document.addEventListener('submit', async (e) => {
 		formData.append('isbn', $isbnBook);
 		formData.append('image', $img[0]);
 
-		const ui = new UI();
 		const message = await ui.addNewBook(formData);
 		console.log(message);
 	}
 });
 
-document.addEventListener('click', (e) => {});
+document.addEventListener('click', (e) => {
+	if(e.target.matches('.delete')) {
+		e.preventDefault()
+		ui.deleteBook(e.target.getAttribute('_id'))
+	}
+});

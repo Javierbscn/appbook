@@ -34,11 +34,18 @@ export default class UI {
 
 	async addNewBook(book) {
 		const response = await bookService.postBook(book);
-		this.renderBooks();
+        this.renderBooks();
+        this.clearBookForm();
 		return response;
 	}
 
 	clearBookForm() {
 		document.getElementById('book-form').reset();
-	}
+    }
+    
+    async deleteBook(bookId) {
+        const response = await bookService.deleteBook(bookId);
+        this.renderBooks();
+        return response;
+    }
 }
