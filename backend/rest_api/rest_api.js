@@ -10,8 +10,8 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 	const { title, author, isbn } = req.body;
-	// const image_url = '/uploads/' + req.file.filename;
-	const newBook = new Book({ title, author, isbn });
+	const image_url = '/uploads/' + req.file.filename;
+	const newBook = new Book({ title, author, isbn, image_url });
 	await newBook.save();
 
 	res.json({ message: 'Libro añadido' });
