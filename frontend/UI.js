@@ -6,4 +6,10 @@ export default class UI {
 		const books = await bookService.getBooks();
 		return books;
 	}
+
+	async addNewBook(book) {
+		const response = await bookService.postBook(book);
+		this.renderBooks();
+		return response;
+	}
 }

@@ -7,5 +7,13 @@ export default class BookService {
 		const response = await fetch(this.Url);
 		const books = await response.json();
 		return books;
-	}
+    }
+    
+    async postBook(book) {
+        const response = await fetch(this.Url, {
+            method: 'POST',
+            body: book
+        })
+        return response.json()
+    }
 }
