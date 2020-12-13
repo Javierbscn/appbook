@@ -19,15 +19,15 @@ document.addEventListener('submit', async (e) => {
 		formData.append('isbn', $isbnBook);
 		formData.append('image', $img[0]);
 
-		const message = await ui.addNewBook(formData);
-		console.log(message);
+		const response = await ui.addNewBook(formData);
+		ui.renderMessage(response.message, 'success');
 	}
 });
 
 document.addEventListener('click', async (e) => {
 	if(e.target.matches('.delete')) {
-		e.preventDefault()
-		const message = await ui.deleteBook(e.target.getAttribute('_id'))
-		console.log(message);
+		e.preventDefault();
+		const response = await ui.deleteBook(e.target.getAttribute('_id'));
+		ui.renderMessage(response.message, 'danger');
 	}
 });

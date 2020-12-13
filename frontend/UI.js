@@ -38,14 +38,29 @@ export default class UI {
         this.clearBookForm();
 		return response;
 	}
-
-	clearBookForm() {
-		document.getElementById('book-form').reset();
-    }
     
     async deleteBook(bookId) {
         const response = await bookService.deleteBook(bookId);
         this.renderBooks();
         return response;
+    }
+
+    clearBookForm() {
+		document.getElementById('book-form').reset();
+    }
+
+    renderMessage(message, colorMessage) {
+        const $container = document.querySelector('.col-md-4'),
+            $card = document.querySelector('.card'),
+            $div = document.createElement('div');
+
+        $div.className = `alert alert-${colorMessage} message`;
+        $div.appendChild(document.createTextNode(message));
+        
+        $container.insertBefore($div, $card);
+
+        setTimeout(() => {
+            document.querySelector('.message').remove();
+        }, 3000);
     }
 }
