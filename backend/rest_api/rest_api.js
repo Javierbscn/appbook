@@ -1,4 +1,5 @@
 const Book = require('../models/Book'),
+	path = require('path'),
 	{ Router } = require('express'),
 	{ unlink } = require('fs-extra'),
 	router = Router();
@@ -10,8 +11,12 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
 	const { title, author, isbn } = req.body;
-	const image_url = '/uploads/' + req.file.filename;
-	const newBook = new Book({ title, author, isbn, image_url });
+	const image_path = '/uploads/' + req.file.filename;
+	const newBook = new Book({ title, author, isbn, image_path });
+
+	console.log(newBook);
+	console.log(req.file);
+
 	await newBook.save();
 
 	res.json({ message: 'Libro añadido' });
