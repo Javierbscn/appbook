@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	ui.renderBooks();
 });
 
+document.getElementById("image").addEventListener('change', (e) => {
+	let fileName = e.target.value.split('\\').pop();
+    document.querySelector(".custom-file-label").innerHTML = fileName;
+})
+
 document.addEventListener('submit', async (e) => {
 	if (e.target.matches('#book-form')) {
 		e.preventDefault();
