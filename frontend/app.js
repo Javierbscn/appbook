@@ -11,7 +11,10 @@ document.addEventListener('submit', async (e) => {
 		const $nameBook = document.getElementById('name').value,
 			$authorBook = document.getElementById('author').value,
 			$isbnBook = document.getElementById('isbn').value,
-			$img = document.getElementById('image').files;
+			$img = document.getElementById('image').files,
+			$imgProgressbar = document.getElementById('image-progressbar');
+
+		$imgProgressbar.classList.remove('d-none');
 
 		const formData = new FormData();
 		formData.append('title', $nameBook);
@@ -21,6 +24,7 @@ document.addEventListener('submit', async (e) => {
 
 		const response = await ui.addNewBook(formData, $imgProgressbar);
 		ui.renderMessage(response.message, 'success');
+		$imgProgressbar.classList.add('d-none')
 	}
 });
 
