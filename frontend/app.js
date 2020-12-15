@@ -17,6 +17,11 @@ document.addEventListener('submit', async (e) => {
 			$authorBook = document.getElementById('author').value,
 			$isbnBook = document.getElementById('isbn').value,
 			$img = document.getElementById('image').files;
+		
+		if ($nameBook.length < 1 || $authorBook.length < 4 || $isbnBook.length < 1 || $img.length === 0) {
+			ui.renderMessage('Datos inválidos, por favor rellena correctamente los campos', 'danger');
+			return;
+		}
 
 		const formData = new FormData();
 		formData.append('title', $nameBook);

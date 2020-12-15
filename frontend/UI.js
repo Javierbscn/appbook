@@ -63,4 +63,6 @@ export default class UI {
             document.querySelector('.message').remove();
         }, 3000);
     }
+
+    showLoader() {}
 }
