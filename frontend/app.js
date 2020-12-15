@@ -19,7 +19,7 @@ document.addEventListener('submit', async (e) => {
 		formData.append('isbn', $isbnBook);
 		formData.append('image', $img[0]);
 
-		const response = await ui.addNewBook(formData);
+		const response = await ui.addNewBook(formData, $imgProgressbar);
 		ui.renderMessage(response.message, 'success');
 	}
 });

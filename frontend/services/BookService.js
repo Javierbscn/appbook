@@ -4,24 +4,24 @@ export default class BookService {
 	}
 
 	async getBooks() {
-		const response = await fetch(this.Url);
-		const books = await response.json();
+		const response = await axios(this.Url);
+		const books = await response;
 		return books;
 	}
 
-	async postBook(book) {
-		const response = await fetch(this.Url, {
-			method: 'POST',
-			body: book
+	async postBook(book, progressbar) {
+		const response = await axios.post(this.Url, book, {
+			headers: { 'Content-Type': 'multipart/form-data' },
+			onUploadProgress(file) {
+				let progress = (file.loaded * 100) / file.total;
+				progressbar.setAttribute('value', progress);
+			}
 		});
-		return response.json();
+		return response.data;
 	}
 
 	async deleteBook(bookId) {
-		const response = await fetch(`${this.Url}/${bookId}`, {
-            method: 'DELETE',
-            headers: { 'Content-type': 'application/json' }
-        });
-		return response.json();
+		const response = await axios.delete(`${this.Url}/${bookId}`);
+		return response.data;
 	}
 }
