@@ -4,6 +4,7 @@ const bookService = new BookService(),
 
 export default class UI {
 	async renderBooks() {
+        this.showLoader();
 		const books = await bookService.getBooks(),
 			$bookCards = document.getElementById('book-cards'),
 			$div = document.createElement('div');
@@ -30,18 +31,23 @@ export default class UI {
             </div>`;
 		});
         $bookCards.appendChild($div);
+        this.showLoader();
 	}
 
 	async addNewBook(book) {
+        this.showLoader();
 		const response = await bookService.postBook(book);
         this.renderBooks();
+        this.showLoader();
         this.clearBookForm();
 		return response;
 	}
     
     async deleteBook(bookId) {
+        this.showLoader();
         const response = await bookService.deleteBook(bookId);
         this.renderBooks();
+        this.showLoader();
         return response;
     }
 
@@ -64,5 +70,7 @@ export default class UI {
         }, 3000);
     }
 
-    showLoader() {}
+    showLoader() {
+        document.querySelector('.loader').classList.toggle('d-none');
+    }
 }
