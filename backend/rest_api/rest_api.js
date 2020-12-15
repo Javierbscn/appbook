@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 	await newBook.save();
 	await unlink(req.file.path);
 
-	res.json({ message: 'Libro añadido' });
+	res.json({ message: 'Nuevo libro añadido' });
 });
 
 router.delete('/:id', async (req, res) => {
@@ -37,7 +37,7 @@ router.delete('/:id', async (req, res) => {
 
 	const result = await cloudinary.uploader.destroy(bookDeleted.public_id)
 
-	if(result.result === 'ok') res.json({ message: 'Libro eliminado correctamente' });
+	if (result.result === 'ok') res.json({ message: 'Libro eliminado correctamente' });
 	else res.json({ message: 'Fallo al eliminar libro!' });
 });
 

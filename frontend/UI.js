@@ -13,7 +13,7 @@ export default class UI {
 			$div.innerHTML += `<div class="card p-3 my-3">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="http://localhost:3000${book.image_path}" class="img-fluid" alt="${book.title}">
+                        <img src="${book.image_path}" class="img-fluid" alt="${book.title}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-block">
