@@ -29,7 +29,7 @@ export default class UI {
                 </div>
             </div>`;
 		});
-		$bookCards.appendChild($div);
+        $bookCards.appendChild($div);
 	}
 
 	async addNewBook(book, uploadProgress) {
