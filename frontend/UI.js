@@ -9,7 +9,7 @@ export default class UI {
 			$div = document.createElement('div');
 		$bookCards.innerHTML = null;
 
-		books.data.forEach((book) => {
+		books.forEach((book) => {
 			$div.innerHTML += `<div class="card p-3 my-3">
                 <div class="row">
                     <div class="col-md-4">
@@ -32,8 +32,8 @@ export default class UI {
         $bookCards.appendChild($div);
 	}
 
-	async addNewBook(book, uploadProgress) {
-		const response = await bookService.postBook(book, uploadProgress);
+	async addNewBook(book) {
+		const response = await bookService.postBook(book);
         this.renderBooks();
         this.clearBookForm();
 		return response;
