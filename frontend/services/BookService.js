@@ -1,6 +1,6 @@
 export default class BookService {
 	constructor() {
-		this.Url = 'http://localhost:3000/api/books';
+		this.Url = '/api/books';
 	}
 
 	async getBooks() {
