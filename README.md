@@ -1,10 +1,12 @@
 # App book
-Esta es una aplicación completa (frontend y backend) que se encarga de guardar los datos de un libro introducido en una base de datos.
-Fue realizado con HTML, Bootstrap4, JavaScript, Node.js, Express.js, Mongoose, MongoDB, Webpack, Multer.js y Cloudinary (para almacenar imágenes).
+This is a complete application (frontend and backend) that is responsible for saving the data of a book entered in a database.
+It was made with HTML, Bootstrap4, JavaScript, Node.js, Express.js, Mongoose, MongoDB, Webpack, Multer.js and Cloudinary (to store images)
 
-## Instalación
+## Installation
 1. `npm install`
 2. `npm run dev`
 
-## App en producción
-https://appbook-js.herokuapp.com/
+Note: It is necessary to be running [MongoDB](https://www.mongodb.com/docs/manual/tutorial/getting-started/) locally by creating a database called "appbookdb".
+
+## App in production
+It's avaible [here](https://appbookjs.netlify.app/)
