@@ -4,9 +4,17 @@ It was made with HTML, Bootstrap4, JavaScript, Node.js, Express.js, Mongoose, Mo
 
 ## Installation
 1. `npm install`
-2. `npm run dev`
+2. `npm run start`
 
-Note: It is necessary to be running [MongoDB](https://www.mongodb.com/docs/manual/tutorial/getting-started/) locally by creating a database called "appbookdb".
+Note: You need to run [MongoDB](https://www.mongodb.com/docs/manual/tutorial/getting-started/) locally by creating a database called "appbookdb". And configure the `.env` file in the root of the project with environment variables for the correct operation of the app:
+```
+MONGODB_URI
+CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+```
+
+3. Go to the `https://localhost:3000` for run app.
 
 ## App in production
-It's avaible [here](https://appbookjs.netlify.app/)
+It's [avaible here](https://appbookjs.glitch.me/)
