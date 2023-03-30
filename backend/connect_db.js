@@ -9,7 +9,7 @@ const connected = async () => {
 		});
 		console.log('DB is connected');
 	} catch (error) {
-		console.log(error);
+		console.log(`An error in connect_db.js file: ${error}`);
 	}
 };
 
